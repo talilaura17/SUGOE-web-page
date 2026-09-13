@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鼠購邑 Sugoi | 專業冷凍小白鼠真空包專賣（猛禽·爬蟲飼料）</title>
+  <style>
+    :root {
+      --primary-color: #2b580c;
+      --secondary-color: #639a67;
+      --accent-color: #d9383a; /* 採用 Logo 手寫字的紅色 */
+      --line-color: #06c755;
+      --fb-color: #1877f2;
+      --myship-color: #00885a;
+      --bg-color: #fcfbf9;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --text-muted: #666666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 48px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2c2c2c;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-tag {
+      font-size: 0.8rem;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .nav-socials {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .btn-link-sm {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: opacity 0.2s;
+    }
+
+    .btn-link-sm:hover {
+      opacity: 0.85;
+    }
+
+    .btn-myship { background-color: var(--myship-color); }
+    .btn-line { background-color: var(--line-color); }
+    .btn-fb { background-color: var(--fb-color); }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #2b3a4a 0%, #1e293b 100%);
+      color: white;
+      text-align: center;
+      padding: 3.5rem 2rem 4rem;
+    }
+
+    .hero-logo-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      background: white;
+      border-radius: 50%;
+      padding: 6px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* Channel Banner Section */
+    .channel-section {
+      max-width: 1200px;
+      margin: -2rem auto 2rem;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .channel-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .channel-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .channel-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .btn-channel {
+      display: block;
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+
+    .btn-channel:hover {
+      opacity: 0.9;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Warning Banner */
+    .warning-banner {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      color: #856404;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* Products Section */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .filter-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tag-btn {
+      border: 1px solid var(--secondary-color);
+      background: white;
+      color: var(--secondary-color);
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tag-btn.active, .tag-btn:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 200px;
+      background-color: #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .product-info {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+
+    .btn-buy-link {
+      background-color: var(--myship-color);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .footer-section p, .footer-section li {
+      font-size: 0.9rem;
+      color: #adb5bd;
+      line-height: 1.8;
+      list-style: none;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #639a67;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #343a40;
+      color: #6c757d;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <!-- 請將 logo.jpg 替換為您的圖片檔案路徑 -->
+        <img src="logo.jpg" alt="鼠購邑商標" class="logo-img">
+        <span class="logo-text">
+          鼠購邑 Sugoi
+          <span class="logo-tag">生鮮冷凍</span>
+        </span>
+      </div>
+      <!-- 快捷選單 -->
+      <div class="nav-socials">
+        <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-link-sm btn-myship">🛒 7-11 賣貨便</a>
+        <a href="https://lin.ee/vz9fBMV" target="_blank" class="btn-link-sm btn-line">💬 官方 LINE</a>
+        <a href="https://www.facebook.com/profile.php?id=61593536202782" target="_blank" class="btn-link-sm btn-fb">👍 FB 粉絲專頁</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-logo-wrapper">
+      <!-- 大型首頁 Logo 展示 -->
+      <img src="logo.jpg" alt="鼠購邑 Logo" class="hero-logo">
+    </div>
+    <h1>猛禽·爬蟲專用 頂級冷凍小白鼠</h1>
+    <p>嚴格無菌繁殖、獨立真空抽氣包裝。零污染、易保存，給您的寵物最極致的營養補充。</p>
+    
+    <div class="trust-badges">
+      <span class="badge">❄️ -18°C 全程冷凍宅配</span>
+      <span class="badge">🔒 專業獨立真空包裝</span>
+      <span class="badge">🐭 健康無菌人工繁殖</span>
+    </div>
+  </section>
+
+  <!-- 賣場與社群主要按鈕區塊 -->
+  <div class="channel-section">
+    <div class="channel-grid">
+      <!-- 賣貨便 -->
+      <div class="channel-card">
+        <div>
+          <h3>7-11 賣貨便賣場</h3>
+          <p>支援超商取貨付款，下單最快速便利。</p>
+        </div>
+        <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-channel btn-myship">前往賣貨便下單 ➔</a>
+      </div>
+
+      <!-- 官方 LINE -->
+      <div class="channel-card">
+        <div>
+          <h3>LINE 官方客服</h3>
+          <p>大量採購諮詢、定期購訂閱、即時客服。</p>
+        </div>
+        <a href="https://lin.ee/vz9fBMV" target="_blank" class="btn-channel btn-line">加入 LINE 好友 ➔</a>
+      </div>
+
+      <!-- FB 粉專 -->
+      <div class="channel-card">
+        <div>
+          <h3>Facebook 粉絲專頁</h3>
+          <p>最新到貨通知、優惠活動與養殖交流。</p>
+        </div>
+        <a href="https://www.facebook.com/profile.php?id=61593536202782" target="_blank" class="btn-channel btn-fb">追蹤 FB 粉絲專頁 ➔</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="warning-banner">
+      <strong>⚠️ 警示與溫馨提醒：</strong>
+      本產品為猛禽、蛇類與守宮等特殊寵物專用生鮮飼料，<strong>非供人類食用</strong>。收到包裹後請聯即放入 -18°C 冷凍庫保存。
+    </div>
+
+    <h2 class="section-title">小白鼠尺寸規格</h2>
+
+    <div class="filter-tags">
+      <button class="tag-btn active">全部規格</button>
+      <button class="tag-btn">粉紅乳鼠 (Pinkies)</button>
+      <button class="tag-btn">跳鼠 (Fuzzies)</button>
+      <button class="tag-btn">成鼠 (Adults)</button>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img">真空包裝示意圖 [粉紅乳鼠]</div>
+        <div class="product-info">
+          <div class="product-title">粉紅乳鼠真空包 (10入)</div>
+          <div class="product-desc">體重：約 1.5g - 2.5g<br>適合：幼蛇、小型守宮、雛鳥</div>
+          <div class="product-meta">
+            <span class="product-price">NT$ 250</span>
+            <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img">真空包裝示意圖 [中跳鼠]</div>
+        <div class="product-info">
+          <div class="product-title">中跳鼠真空包 (10入)</div>
+          <div class="product-desc">體重：約 5g - 8g<br>適合：中型亞成蛇、小型猛禽</div>
+          <div class="product-meta">
+            <span class="product-price">NT$ 350</span>
+            <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img">真空包裝示意圖 [大成鼠]</div>
+        <div class="product-info">
+          <div class="product-title">大成鼠真空包 (5入)</div>
+          <div class="product-desc">體重：約 20g - 25g<br>適合：大型蟒蛇、中大型猛禽</div>
+          <div class="product-meta">
+            <span class="product-price">NT$ 300</span>
+            <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>鼠購邑 Sugoi 飼料企業社</h4>
+        <p>提供品質穩定、包裝衛生的高品質冷凍小白鼠飼料，是您餵養猛禽與爬蟲寵物的最佳夥伴。</p>
+      </div>
+      <div class="footer-section">
+        <h4>快速連結</h4>
+        <div class="footer-links">
+          <a href="https://myship.7-11.com.tw/" target="_blank">🛒 7-11 賣貨便賣場</a>
+          <a href="https://lin.ee/vz9fBMV" target="_blank">💬 LINE 官方帳號</a>
+          <a href="https://www.facebook.com/profile.php?id=61593536202782" target="_blank">👍 Facebook 粉絲專頁</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>餵食與解凍建議</h4>
+        <ul>
+          <li>• 請使用 37-40°C 溫水隔水解凍</li>
+          <li>• 解凍後請確認中心微溫再行餵食</li>
+          <li>• 切勿使用微波爐解凍</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 鼠購邑 Sugoi 版權所有 | 非人類食用生鮮產品
+    </div>
+  </footer>
+
+</body>
+</html>
