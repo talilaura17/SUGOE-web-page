@@ -135,7 +135,7 @@
       font-size: 1.1rem;
       opacity: 0.9;
       max-width: 600px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 0.5rem;
     }
 
     /* Channel Banner Section */
@@ -164,6 +164,17 @@
       align-items: center;
       justify-content: space-between;
     }
+	
+	.channel-btns {
+	  display: flex;
+	  gap: 10px; /* 兩個按鈕之間的間距 */
+	  width: 100%;
+	  margin-top: 1rem; /* 與上方文字保持距離 */
+	}
+	.channel-btns .btn-channel {
+	  flex: 1; 
+	  text-align: center;
+	}
 
     .channel-card h3 {
       font-size: 1.2rem;
@@ -397,14 +408,14 @@
         <!-- 請將 logo.jpg 替換為您的圖片檔案路徑 -->
         <img src="logo.jpg" alt="鼠購邑商標" class="logo-img">
         <span class="logo-text">
-          鼠購邑 Sugoi
-          <span class="logo-tag">生鮮冷凍</span>
+          鼠購邑 
+          <span class="logo-tag">生鮮冷凍寵物食品</span>
         </span>
       </div>
       <!-- 快捷選單 -->
       <div class="nav-socials">
-        <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-link-sm btn-myship">🛒 7-11 賣貨便</a>
-        <a href="https://lin.ee/vz9fBMV" target="_blank" class="btn-link-sm btn-line">💬 官方 LINE</a>
+        <!--<a href="https://myship.7-11.com.tw/" target="_blank" class="btn-link-sm btn-myship">🛒 7-11 賣貨便</a>-->
+        <a href="https://lin.ee/5PnQaA1p" target="_blank" class="btn-link-sm btn-line">💬 鼠購邑官方 LINE</a>
         <a href="https://www.facebook.com/profile.php?id=61593536202782" target="_blank" class="btn-link-sm btn-fb">👍 FB 粉絲專頁</a>
       </div>
     </div>
@@ -415,13 +426,18 @@
       <!-- 大型首頁 Logo 展示 -->
       <img src="logo.jpg" alt="鼠購邑 Logo" class="hero-logo">
     </div>
-    <h1>猛禽·爬蟲專用 頂級冷凍小白鼠</h1>
-    <p>嚴格無菌繁殖、獨立真空抽氣包裝。零污染、易保存，給您的寵物最極致的營養補充。</p>
+    <h1>鼠購邑・嚴選冷凍小白鼠</h1>
+    
+		<p><strong>專用飼料飼養：</strong>非一般廉價狗飼料，無脂肪過高疑慮，提供純淨營養。</p>
+		<p><strong>嚴格健康管控：</strong>無寄生蟲與病菌感染風險，守護您爬寵健康吃得安心。</p>
+		<p><strong>急速冷凍鎖鮮：</strong>完美保留豐富蛋白質與天然能量，鎖住最新鮮的狀態。</p>
+		<p><strong>食品真空包裝：</strong>飼養零污染、超容易保存新鮮，方便取用取用不沾手。</p>
+	
     
     <div class="trust-badges">
       <span class="badge">❄️ -18°C 全程冷凍宅配</span>
-      <span class="badge">🔒 專業獨立真空包裝</span>
-      <span class="badge">🐭 健康無菌人工繁殖</span>
+      <span class="badge">🔒 專業食品級真空包裝</span>
+      <span class="badge">🐭 健康人工繁殖</span>
     </div>
   </section>
 
@@ -429,21 +445,24 @@
   <div class="channel-section">
     <div class="channel-grid">
       <!-- 賣貨便 -->
-      <div class="channel-card">
+     <!--   <div class="channel-card">
         <div>
           <h3>7-11 賣貨便賣場</h3>
           <p>支援超商取貨付款，下單最快速便利。</p>
         </div>
         <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-channel btn-myship">前往賣貨便下單 ➔</a>
-      </div>
+      </div>-->
 
-      <!-- 官方 LINE -->
+      <!-- 鼠購邑 官方 LINE -->
       <div class="channel-card">
         <div>
-          <h3>LINE 官方客服</h3>
+          <h3>鼠購邑 LINE 官方帳號</h3>
           <p>大量採購諮詢、定期購訂閱、即時客服。</p>
         </div>
-        <a href="https://lin.ee/vz9fBMV" target="_blank" class="btn-channel btn-line">加入 LINE 好友 ➔</a>
+        <div class="channel-btns">
+		  <a href="https://lin.ee/5PnQaA1p" target="_blank" class="btn-channel btn-line">加入 LINE 好友 ➔</a>
+		  <a href="https://line.me/ti/g2/qRrYvWYRde_SUT8igw2wKA8RjkIWfy47quoFrw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" class="btn-channel btn-line">加入 LINE 社群 ➔</a>
+		</div>
       </div>
 
       <!-- FB 粉專 -->
@@ -454,60 +473,72 @@
         </div>
         <a href="https://www.facebook.com/profile.php?id=61593536202782" target="_blank" class="btn-channel btn-fb">追蹤 FB 粉絲專頁 ➔</a>
       </div>
+	  
+	  <!-- 上好蟋蟀 官方 LINE -->
+      <div class="channel-card">
+        <div>
+          <h3>合作夥伴 - 上好蟋蟀 LINE 官方帳號</h3>
+          <p>大量採購諮詢、定期購訂閱、即時客服。</p>
+        </div>
+        <div class="channel-btns">
+		  <a href="https://lin.ee/ZUzJDym" target="_blank" class="btn-channel btn-line">加入 LINE 好友 ➔</a>
+		  <a href="https://line.me/ti/g2/BGSgOTz0aRKeC9cPM27DMjA9hhCTMqw4ssj5Cw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" class="btn-channel btn-line">加入 LINE 社群 ➔</a>
+		</div>
+      </div>
     </div>
   </div>
 
   <div class="main-container">
     <div class="warning-banner">
       <strong>⚠️ 警示與溫馨提醒：</strong>
-      本產品為猛禽、蛇類與守宮等特殊寵物專用生鮮飼料，<strong>非供人類食用</strong>。收到包裹後請聯即放入 -18°C 冷凍庫保存。
+      本產品為猛禽、蛇類與守宮等特殊寵物專用生鮮飼料，<strong>非供人類食用</strong>。收到包裹後請聯即放入冷凍庫保存。餵食前請先撕開包裝後充分泡熱水解凍。
     </div>
 
-    <h2 class="section-title">小白鼠尺寸規格</h2>
+ <!--   <h2 class="section-title">小白鼠尺寸規格</h2>
 
     <div class="filter-tags">
       <button class="tag-btn active">全部規格</button>
       <button class="tag-btn">粉紅乳鼠 (Pinkies)</button>
       <button class="tag-btn">跳鼠 (Fuzzies)</button>
       <button class="tag-btn">成鼠 (Adults)</button>
-    </div>
+    </div>-->
 
-    <div class="product-grid">
+  <div class="product-grid">
       <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-img">真空包裝示意圖 [粉紅乳鼠]</div>
+    <div class="product-card">
+        <!--<div class="product-img">真空包裝示意圖 [粉紅乳鼠]</div>-->
         <div class="product-info">
-          <div class="product-title">粉紅乳鼠真空包 (10入)</div>
+          <div class="product-title">乳鼠真空包 (10入)</div>
           <div class="product-desc">體重：約 1.5g - 2.5g<br>適合：幼蛇、小型守宮、雛鳥</div>
           <div class="product-meta">
-            <span class="product-price">NT$ 250</span>
-            <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>
+            <span class="product-price">NT$ 100</span>
+             <!--<a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a> -->
           </div>
         </div>
       </div>
 
       <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-img">真空包裝示意圖 [中跳鼠]</div>
+    <div class="product-card">
+        <!--<div class="product-img">真空包裝示意圖 [中跳鼠]</div>-->
         <div class="product-info">
-          <div class="product-title">中跳鼠真空包 (10入)</div>
+          <div class="product-title">跳跳真空包 (10入)</div>
           <div class="product-desc">體重：約 5g - 8g<br>適合：中型亞成蛇、小型猛禽</div>
           <div class="product-meta">
-            <span class="product-price">NT$ 350</span>
-            <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>
+            <span class="product-price">NT$ 150</span>
+             <!-- <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>-->
           </div>
         </div>
       </div>
 
       <!-- Product 3 -->
-      <div class="product-card">
-        <div class="product-img">真空包裝示意圖 [大成鼠]</div>
+    <div class="product-card">
+        <!--  <div class="product-img">真空包裝示意圖 [大成鼠]</div>-->
         <div class="product-info">
-          <div class="product-title">大成鼠真空包 (5入)</div>
+          <div class="product-title">亞成鼠真空包 (10入)</div>
           <div class="product-desc">體重：約 20g - 25g<br>適合：大型蟒蛇、中大型猛禽</div>
           <div class="product-meta">
-            <span class="product-price">NT$ 300</span>
-            <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>
+            <span class="product-price">NT$ 200</span>
+             <!-- <a href="https://myship.7-11.com.tw/" target="_blank" class="btn-buy-link">前往賣貨便購買</a>-->
           </div>
         </div>
       </div>
@@ -517,28 +548,30 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h4>鼠購邑 Sugoi 飼料企業社</h4>
+        <h4>鼠購邑行銷企業社</h4>
+		<p>統一編號：61029638</p>
+		<p>連絡電話：0919921184 (吳先生)</p>
         <p>提供品質穩定、包裝衛生的高品質冷凍小白鼠飼料，是您餵養猛禽與爬蟲寵物的最佳夥伴。</p>
       </div>
       <div class="footer-section">
         <h4>快速連結</h4>
         <div class="footer-links">
-          <a href="https://myship.7-11.com.tw/" target="_blank">🛒 7-11 賣貨便賣場</a>
-          <a href="https://lin.ee/vz9fBMV" target="_blank">💬 LINE 官方帳號</a>
+          <!-- <a href="https://myship.7-11.com.tw/" target="_blank">🛒 7-11 賣貨便賣場</a>-->
+          <a href="https://lin.ee/5PnQaA1p" target="_blank">💬 LINE 官方帳號</a>
           <a href="https://www.facebook.com/profile.php?id=61593536202782" target="_blank">👍 Facebook 粉絲專頁</a>
         </div>
       </div>
       <div class="footer-section">
         <h4>餵食與解凍建議</h4>
         <ul>
-          <li>• 請使用 37-40°C 溫水隔水解凍</li>
+          <li>• 請先撕開包裝，使用 37-40°C 溫水隔水解凍</li>
           <li>• 解凍後請確認中心微溫再行餵食</li>
           <li>• 切勿使用微波爐解凍</li>
         </ul>
       </div>
     </div>
     <div class="copyright">
-      &copy; 2026 鼠購邑 Sugoi 版權所有 | 非人類食用生鮮產品
+      &copy; 2026 鼠購邑 版權所有 | 非人類食用生鮮產品
     </div>
   </footer>
 
